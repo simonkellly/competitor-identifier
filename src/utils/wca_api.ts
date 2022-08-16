@@ -1,0 +1,1 @@
+export const WCA_API_URL = 'https://www.worldcubeassociation.org/api/v0';
