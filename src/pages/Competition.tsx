@@ -22,6 +22,10 @@ export const Competition = () => {
     }).catch(() => navigate("/"));
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [compData])
+
   if (!compData) return(
     <Layout home={false}>
       <UICard>
