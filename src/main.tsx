@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
-  BrowserRouter,
   Routes,
   Route,
   Navigate,
+  HashRouter,
 } from "react-router-dom";
 import { Competition } from './pages/Competition';
 import { Home } from './pages/Home';
@@ -12,7 +12,7 @@ import './style/index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter basename={"/competitor-identifier"}>
+    <HashRouter>
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
@@ -20,6 +20,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         </Route>
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 )
