@@ -27,7 +27,7 @@ export const Home = () => {
 
     const obj = {};
     searchRequest.current = obj;
-    await new Promise((resolve) => setTimeout(resolve, 200));
+    await new Promise((resolve) => setTimeout(resolve, 500));
     if (searchRequest.current !== obj) return;
 
     console.log("Searching for:", query);
