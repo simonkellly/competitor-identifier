@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import { UICard } from "../components/UICard";
-import { WCA_API_URL } from "../utils/wca_api";
+import { getWCALiveUrl, WCA_API_URL } from "../utils/wca_api";
 import * as WCA from "@wca/helpers";
 
 export const Competition = () => {
@@ -41,6 +41,11 @@ export const Competition = () => {
     return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace("'", "");
   }
 
+  const goToWCALive = async (person: WCA.Person) => {
+    const wcaLiveUrl = await getWCALiveUrl(compData.name, person.name);
+    if (wcaLiveUrl) window.location.href = wcaLiveUrl;
+  }
+
   const renderCompetitors = () => {
     const normalQuery = normalizeString(query);
     const persons = query.length < 1 ? 
@@ -75,7 +80,12 @@ export const Competition = () => {
             return (
               <tr key={i}>
                 <td>{person.registrantId}</td>
-                <td>{person.name.replace(new RegExp(' \\(.+\\)'), '')}</td>
+                <td 
+                  className="underline cursor-pointer"
+                  onClick={() => goToWCALive(person)}
+                >
+                  {person.name.replace(new RegExp(' \\(.+\\)'), '')}
+                </td>
               </tr>
             );
         })}
