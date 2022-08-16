@@ -41,10 +41,9 @@ export const Home = () => {
       <UICard>
         {competitions.map((comp, i) => {
           return (
-            <div className="py-1">
+            <div className="py-1" key={i}>
               <button 
                 className="btn btn-primary btn-block" 
-                key={i}
                 onClick={() => navigate(`/${comp.id}`)}
               >
                 {comp.name}
