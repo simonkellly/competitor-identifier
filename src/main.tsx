@@ -12,7 +12,7 @@ import './style/index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={"/competitor-identifier"}>
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
