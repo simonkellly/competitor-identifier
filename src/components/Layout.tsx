@@ -37,7 +37,11 @@ export const Layout = (props: LayoutProps) => {
         <div className="text-center">
           <h1 className="text-5xl font-bold">Competitor Identifier</h1>
           <p className="py-6">
-            All of your WCA Competitor Identifier needs will be fulfilled here.
+            Too busy to just check groupifier?
+            <br/>
+            Not actually a member of staff?
+            <br/>
+            This tool might be what you want.
           </p>
         </div>
 
