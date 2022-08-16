@@ -24,6 +24,7 @@ export const Competition = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    document.title = `${compData?.name} - Competitor Identifier`;
   }, [compData])
 
   if (!compData) return(

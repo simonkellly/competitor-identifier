@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Layout } from "../components/Layout";
@@ -14,6 +14,10 @@ export const Home = () => {
   const searchRequest = useRef({});
   const [competitions, setCompetitions] = useState<Competition[]>([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title ="Competitor Identifier";
+  }, []);
 
   const search = async (query: string) => {
     if (!query || query.length < 2) {
